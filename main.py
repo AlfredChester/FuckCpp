@@ -17,7 +17,7 @@ def execute(conf) -> None:
     Confuser        = confuser(pData['level'])
     confusedCode    = Confuser.genConfused(sourcelines)
     if pData['zipsrc']:
-        pass
+        confusedCode= compress(confusedCode)
     outPutFile      = open(pData['output'], 'w', encoding='u8')
     outPutFile.write(confusedCode)
     outPutFile.close()
