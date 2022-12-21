@@ -4,12 +4,14 @@ from random import randint
 
 @logger.catch
 class confuser:
+    @logger.catch
     def isPreProcessLine(self, line: str) -> bool:
         for char in line:
             if char != ' ': 
                 return char == '#'
         return False
 
+    @logger.catch
     def getReservedPart(self, line: str) -> tuple:
         # Returns (reserved, requireChange)
         reserved = ''
@@ -24,6 +26,7 @@ class confuser:
                 break
         return (reserved, line)
 
+    @logger.catch
     def genRandName(self) -> str:
         seed = randint(0x100000, 0xffffff)
         while seed in self.UsedName:
@@ -31,6 +34,7 @@ class confuser:
         self.UsedName.append(seed)
         return '_' + hex(seed)
 
+    @logger.catch
     def genConfused(self, text) -> str:
         toWrite = ''
         for item in self.keywords:
@@ -47,6 +51,7 @@ class confuser:
         logger.debug(f'Confused Code:\n{toWrite}')
         return toWrite
 
+    @logger.catch
     def __init__(self, level) -> None:
         self.UsedName = []
         self.confuse_level = level
