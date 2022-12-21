@@ -2,14 +2,15 @@ from json import dumps
 from utils.logger import *
 from random import randint
 
+@logger.catch
 class confuser:
-    def isPreProcessLine(line: str) -> bool:
+    def isPreProcessLine(self, line: str) -> bool:
         for char in line:
             if char != ' ': 
                 return char == '#'
         return False
 
-    def getReservedPart(line: str) -> tuple:
+    def getReservedPart(self, line: str) -> tuple:
         # Returns (reserved, requireChange)
         reserved = ''
         foundSharp = False
@@ -29,6 +30,22 @@ class confuser:
             seed = randint(0x100000, 0xffffff)
         self.UsedName.append(seed)
         return '_' + hex(seed)
+
+    def genConfused(self, text) -> str:
+        toWrite = ''
+        for item in self.keywords:
+            toWrite += f'#define {self.keywordMatch[item]} {item}\n'
+        for line in text:
+            line = line.replace('\n', '')
+            # print(line)
+            reserved = ''
+            if self.isPreProcessLine(line):
+                reserved, line = self.getReservedPart(line)
+            for replace in self.keywords:
+                line = line.replace(replace, self.keywordMatch[replace])
+            toWrite += (reserved + line + '\n')
+        logger.debug(f'Confused Code:\n{toWrite}')
+        return toWrite
 
     def __init__(self, level) -> None:
         self.UsedName = []
