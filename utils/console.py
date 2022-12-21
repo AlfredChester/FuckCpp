@@ -7,7 +7,7 @@ class MyLogger:
         self.logger = logger
         self.logger.remove()
         self.logger.add(stdout, level = 'INFO',
-            format = '<cyan>{module}.exe</cyan>:'
+            format = '<cyan>{module}.exe</cyan>: '
                      '<level>{message}</level>'
         )
         log_level = 'INFO'
