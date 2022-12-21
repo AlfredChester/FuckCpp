@@ -1,4 +1,4 @@
-from utils.console import logger
+from utils.logger import logger
 from utils.constants import *
 from json import dumps
 from sys import argv, exit
