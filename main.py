@@ -8,6 +8,7 @@ from utils.logger import *
 #     'zipsrc': True
 # }
 
+@logger.catch
 def execute(conf) -> None: 
     # Firstly: Mess Codes
     pData           = conf.ParamData
@@ -15,4 +16,9 @@ def execute(conf) -> None:
     sourcelines     = sourceCode.readlines()
     Confuser        = confuser(pData['level'])
     confusedCode    = Confuser.genConfused(sourcelines)
+    if pData['zipsrc']:
+        pass
+    outPutFile      = open(pData['output'], 'w', encoding='u8')
+    outPutFile.write(confusedCode)
+    outPutFile.close()
     return   
