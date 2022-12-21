@@ -1,4 +1,17 @@
-from utils.mess import *
 from utils.compress import *
+from utils.confuse import *
+from utils.logger import *
 
-def execute(conf) -> None: ...    
+# defaultParamData = {
+#     'level': 'low',
+#     'output': 'confused.cpp',
+#     'zipsrc': True
+# }
+
+def execute(conf) -> None: 
+    # Firstly: Mess Codes
+    pData       = conf.ParamData
+    sourceCode  = open(pData['src'], 'r', encoding='u8')
+    sourcelines = sourceCode.readlines()
+    Confuser    = confuser(pData['level'])
+    return   
