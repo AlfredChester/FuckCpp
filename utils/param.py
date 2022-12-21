@@ -14,6 +14,7 @@ def judgeCppValid(name: str) -> bool:
 @logger.catch
 class commandConfigs:
     ParamData = defaultParamData
+    @logger.catch
     def handleParam(self, index: int) -> None:
         pType = paramType[self.argv[index]]
         pName = paramName[self.argv[index]]
@@ -28,12 +29,16 @@ class commandConfigs:
         else:
             self.ParamData[pName] = True
 
+    @logger.catch
     def checkParamValid(self) -> None:
         if not 'src' in self.ParamData:
             logger.error("No Input Given. FuckCpp terminated")
             exit(0)
 
+    @logger.catch
     def __init__(self) -> None:
+        if len(argv) == 1 or (len(argv) == 2 and 'python' in argv[0]):
+            functionMap['help']()
         self.argc = len(argv)
         self.argv = argv
         jumpInLoop = False
