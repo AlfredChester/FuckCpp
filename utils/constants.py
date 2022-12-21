@@ -13,7 +13,7 @@ cppExtensionNames = [
     '.cp', '.cpp', '.h', '.hpp', '.c'
 ]
 
-keywords = [
+confuseKeywords = [
     'scanf', 'printf', 'cin', 'cout',
     'putchar', 'puts', 'getchar', 'rand',
     'long long', 'int', 'const', 'char', 
