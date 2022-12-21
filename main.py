@@ -10,8 +10,9 @@ from utils.logger import *
 
 def execute(conf) -> None: 
     # Firstly: Mess Codes
-    pData       = conf.ParamData
-    sourceCode  = open(pData['src'], 'r', encoding='u8')
-    sourcelines = sourceCode.readlines()
-    Confuser    = confuser(pData['level'])
+    pData           = conf.ParamData
+    sourceCode      = open(pData['src'], 'r', encoding='u8')
+    sourcelines     = sourceCode.readlines()
+    Confuser        = confuser(pData['level'])
+    confusedCode    = Confuser.genConfused(sourcelines)
     return   
