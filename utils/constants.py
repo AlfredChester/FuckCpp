@@ -1,3 +1,5 @@
+from sys import exit
+
 helpInfo = '''
 Usage: fuckCpp.exe file [options]...
 Options:
@@ -46,7 +48,7 @@ paramName = {
 }
 
 functionMap = {
-    'help': (lambda: print(helpInfo))
+    'help': (lambda: (print(helpInfo), exit(0)))
 }
 
 DEBUG    = True
