@@ -1,5 +1,7 @@
 from sys import exit
 
+endl = '\n'
+
 helpInfo = '''
 Usage: fuckCpp.exe file [options]...
 Options:
@@ -22,6 +24,10 @@ confuseKeywords = [
     'private', 'public', 'void', 'while',
     'for', 'auto', 'size_t', 'if', 'return', 
     'else'
+]
+
+spaceTypes = [
+    ' ', '\t', '\n', '\r', '\v', '\f'
 ]
 
 # 'src' will be given when handling argv
@@ -49,6 +55,18 @@ paramName = {
 
 functionMap = {
     'help': (lambda: (print(helpInfo), exit(0)))
+}
+
+trigraphs = {
+    '=': '#',
+    '/': '\\',
+    '\'': '^',
+    '(': '[',
+    ')': ']',
+    '<': '{',
+    '>': '}',
+    '!': '|',
+    '-': '~'
 }
 
 DEBUG    = True
