@@ -69,6 +69,10 @@ trigraphs = {
     '-': '~'
 }
 
+NodeRunTime = {
+    'win32': 'lib\\win32\\node.exe'
+}
+
 DEBUG    = True
 
 LOG_FILE = 'runlog_{time:YYYYMMDD}.log' 
