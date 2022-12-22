@@ -5,6 +5,10 @@ Do you want to ...?
    
 FuckCpp is a good choice.
 
+### Installation
+Run the batch installDependency.bat in folder js
+Download the node.js runtime binary and decompress it to lib\win32
+
 ### Usage:
 ```
 Usage: fuckCpp.exe file [options]...
