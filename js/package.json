@@ -1,0 +1,20 @@
+{
+    "name": "compresser",
+    "version": "1.0.0",
+    "description": "compresser js codes",
+    "author": "Dr.Alfred <abonlinejudge@163.com>",
+    "private": true,
+    "scripts": {},
+    "dependencies": {
+        "jsdom": "^20.0.3"
+    },
+    "engines": {
+        "node": ">= 4.0.0",
+        "npm": ">= 3.0.0"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not ie <= 8"
+    ]
+}
