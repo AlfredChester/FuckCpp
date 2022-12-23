@@ -2,12 +2,6 @@ from utils.compress import *
 from utils.confuse import *
 from utils.logger import *
 
-# defaultParamData = {
-#     'level': 'low',
-#     'output': 'confused.cpp',
-#     'zipsrc': True
-# }
-
 @logger.catch
 def execute(conf) -> None: 
     # Firstly: Mess Codes
@@ -16,6 +10,7 @@ def execute(conf) -> None:
     sourcelines     = sourceCode.readlines()
     Confuser        = confuser(pData['level'])
     confusedCode    = Confuser.genConfused(sourcelines)
+    # Secondly: Zip Codes
     if pData['zipsrc']:
         confusedCode= compress(confusedCode)
     outPutFile      = open(pData['output'], 'w', encoding='u8')
