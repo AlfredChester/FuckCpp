@@ -1,6 +1,3 @@
-// Dr.Alfred 2022.12.22
-// Inspired By Mivik's Code
-
 var endl = '\n';
 
 String.prototype.isSpace = function() {
@@ -100,7 +97,10 @@ function processMultilineCommentAndReplaceMark(str) {
     return ret;
 }
 
-function compress(str) { return $compress($compress(str)); }
+function compress(str) { 
+    str = String(str.src)
+    return $compress($compress(str)); 
+}
 
 function $compress(str) {
     var ret = '';
@@ -199,3 +199,12 @@ function compressSingle(str) {
     }
     return ret;
 }
+
+module.exports = {
+    compress: compress
+};
+
+require('make-runnable/custom')({
+    printErrorOutput: false,
+    printOutputFrame: false
+});
