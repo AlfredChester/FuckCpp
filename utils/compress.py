@@ -1,9 +1,15 @@
-import execjs
+from utils.constants import *
+from utils.logger import *
+import subprocess as sp
+from sys import platform
 
-_jsFile = open('.\\js\\compress.js', 'r', encoding='u8')
-_jsCompress = execjs.compile(
-    _jsFile.read(), cwd='js\\node_modules'
-)
-
+@logger.catch
 def compress(src: str) -> str:
-    return _jsCompress.call('compress', src)
+     # cmd = NodeRunTime[platform] + \
+     #     f" .\\js\\compress.js compress --src '{src}'"
+     cmd = [ 
+          NodeRunTime[platform], './js/compress.js', 
+          'compress', '--src', f"'{src}'"
+     ]
+     ret = sp.check_output(cmd)
+     return ret
