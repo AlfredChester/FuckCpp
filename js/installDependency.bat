@@ -1,1 +1,1 @@
-rimraf node_modules & npm cache clean --force & cnpm i
+rimraf node_modules & npm cache clean --force & npm --registry=https://registry.npm.taobao.org i
