@@ -1,1 +1,1 @@
-npm install
+rimraf node_modules & npm cache clean --force & cnpm i
