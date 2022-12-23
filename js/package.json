@@ -6,7 +6,8 @@
     "private": true,
     "scripts": {},
     "dependencies": {
-        "jsdom": "^20.0.3"
+        "jsdom": "^20.0.3",
+        "make-runnable": "^1.4.1"
     },
     "engines": {
         "node": ">= 4.0.0",
