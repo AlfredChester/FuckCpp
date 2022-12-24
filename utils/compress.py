@@ -11,10 +11,9 @@ cur_dir = path.dirname(
 
 @logger.catch
 def compress(src: str) -> str:
-     if platform == 'linux':
-          import platform as pf
      cmd = [ 
-          NodeRunTime[platform], f'{cur_dir}/js/compress.js', 
+          'lib/' + NodeRunTime[platform], 
+          f'{cur_dir}/js/compress.js', 
           'compress', '--src', f"'{src}'"
      ]
      ret = sp.check_output(cmd)
