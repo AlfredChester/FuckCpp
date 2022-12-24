@@ -8,8 +8,12 @@ def execute(conf) -> None:
     pData           = conf.ParamData
     sourceCode      = open(pData['src'], 'r', encoding='u8')
     sourcelines     = sourceCode.readlines()
-    Confuser        = confuser(pData['level'])
-    confusedCode    = Confuser.genConfused(sourcelines)
+    confusedCode    = ''
+    for line in sourcelines:
+        confusedCode += line + '\n'
+    if not pData['noConfuse']:
+        Confuser        = confuser(pData['level'])
+        confusedCode    = Confuser.genConfused(sourcelines)
     # Secondly: Zip Codes
     if pData['zipsrc']:
         confusedCode= compress(confusedCode)
