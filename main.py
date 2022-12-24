@@ -10,7 +10,7 @@ def execute(conf) -> None:
     sourcelines     = sourceCode.readlines()
     confusedCode    = ''
     for line in sourcelines:
-        confusedCode += line + '\n'
+        confusedCode += line
     if not pData['noConfuse']:
         Confuser        = confuser(pData['level'])
         confusedCode    = Confuser.genConfused(sourcelines)
