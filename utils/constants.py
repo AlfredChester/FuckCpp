@@ -19,11 +19,11 @@ cppExtensionNames = [
 confuseKeywords = [
     'scanf', 'printf', 'cin', 'cout',
     'putchar', 'puts', 'getchar', 'rand',
-    'long long', 'int', 'const', 'char', 
+    'long long', 'int', 'const', 'char',
     'true', 'false', 'inline', 'struct',
     'bool', '__gcd', 'memset', 'NULL',
     'private', 'public', 'void', 'while',
-    'for', 'auto', 'size_t', 'if', 'return', 
+    'for', 'auto', 'size_t', 'if', 'return',
     'else'
 ]
 
@@ -74,7 +74,8 @@ trigraphs = {
 }
 
 NodeRunTime = {
-    'win32': 'lib\\win32\\node.exe'
+    'win32': 'lib/win32/node.exe',
+    'linux': 'lib/linux/bin/node'
 }
 
 DEBUG    = True
