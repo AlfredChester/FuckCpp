@@ -1,14 +1,18 @@
+import subprocess as sp
+from os import path
+from sys import platform
+
 from utils.constants import *
 from utils.logger import *
-import subprocess as sp
-from sys import platform
-from os import path
+
 cur_dir = path.dirname(
      path.dirname(path.abspath(__file__))
 )
 
 @logger.catch
 def compress(src: str) -> str:
+     if platform == 'linux':
+          import platform as pf
      cmd = [ 
           NodeRunTime[platform], f'{cur_dir}/js/compress.js', 
           'compress', '--src', f"'{src}'"
