@@ -10,13 +10,14 @@ Run the batch installDependency.bat in folder js
 Download the node.js runtime binary and decompress it to lib\win32
 
 ### Usage:
-```
+``` shell
 Usage: fuckCpp.exe file [options]...
 Options:
     -h              Display This Help Info
     -l <level>      Set confusion level to <level>, default value is 'low'
     -o <file>       Place the output into <file>, default value is 'confused.cpp'
     --zip -z        Zip the output source file
+    --no-confuse    Ask FuckCpp not to confuse your source
 ```
 
 Preview:
