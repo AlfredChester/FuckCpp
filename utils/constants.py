@@ -9,6 +9,7 @@ Options:
     -l <level>      Set confusion level to <level>, default value is 'low'
     -o <file>       Place the output into <file>, default value is 'confused.cpp'
     --zip -z        Zip the output source file
+    --no-confuse    Ask FuckCpp not to confuse your source
 '''
 
 cppExtensionNames = [
@@ -34,7 +35,8 @@ spaceTypes = [
 defaultParamData = {
     'level': 'low',
     'output': 'confused.cpp',
-    'zipsrc': True
+    'zipsrc': False,
+    'noConfuse': False
 }
 
 paramType = {
@@ -42,7 +44,8 @@ paramType = {
     '-l': 'data',
     '-o': 'data',
     '--zip': 'boolean',
-    '-z': 'boolean'
+    '-z': 'boolean',
+    '--no-confuse': 'boolean'
 }
 
 paramName = {
@@ -50,7 +53,8 @@ paramName = {
     '-l': 'level',
     '-o': 'output',
     '--zip': 'zipsrc',
-    '-z': 'zipsrc'
+    '-z': 'zipsrc',
+    '--no-confuse': 'noConfuse'
 }
 
 functionMap = {
