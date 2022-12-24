@@ -74,8 +74,8 @@ trigraphs = {
 }
 
 NodeRunTime = {
-    'win32': 'lib/win32/node.exe',
-    'linux': 'lib/linux/bin/node'
+    'win32': 'node.exe',
+    'linux': 'bin/node'
 }
 
 DEBUG    = True
