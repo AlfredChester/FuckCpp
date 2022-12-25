@@ -16,6 +16,8 @@ def compress(src: str) -> str:
         f'{cur_dir}/js/compress.js',
         'compress', '--src', f"'{src}'"
     ]
-    ret = str(sp.check_output(cmd), encoding='u8')
+    ret = sp.check_output(cmd)
+    if not isinstance(ret, str):
+        ret = str(ret, encoding = 'utf-8')
     logger.debug(f'Compressed Code:\n{ret}')
     return ret
