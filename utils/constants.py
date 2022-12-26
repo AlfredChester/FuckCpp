@@ -1,5 +1,7 @@
 from sys import exit
 
+__version__ = '1.3.0'
+
 endl = '\n'
 
 helpInfo = '''
