@@ -131,3 +131,6 @@ dmypy.json
 node_modules/
 
 compile/
+
+# MacOS
+.DS_Stores
