@@ -5,7 +5,7 @@ __version__ = '1.3.0'
 endl = '\n'
 
 helpInfo = '''
-Usage: fuckCpp.exe file [options]...
+Usage: fuckCpp file [options]...
 Options:
     -h              Display This Help Info
     -l <level>      Set confusion level to <level>, default value is 'low'
