@@ -12,7 +12,7 @@ cur_dir = path.dirname(
 @logger.catch
 def compress(src: str) -> str:
     cmd = [
-        'lib/' + NodeRunTime[platform],
+        f'{cur_dir}/lib/' + NodeRunTime[platform],
         f'{cur_dir}/js/compress.js',
         'compress', '--src', f"'{src}'"
     ]
