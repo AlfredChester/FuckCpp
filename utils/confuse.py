@@ -41,7 +41,6 @@ class confuser:
             toWrite += f'#define {self.keywordMatch[item]} {item}\n'
         for line in text:
             line = line.replace('\n', '')
-            # print(line)
             reserved = ''
             if self.isPreProcessLine(line):
                 reserved, line = self.getReservedPart(line)
