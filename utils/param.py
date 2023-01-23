@@ -5,7 +5,7 @@ from sys import argv, exit
 
 @logger.catch
 def judgeCppValid(name: str) -> bool:
-    # decide if a cpp file name is valid
+    # check whether a cpp file name is valid
     for matches in cppExtensionNames:
         if name.endswith(matches):
             return True
@@ -16,8 +16,10 @@ class commandConfigs:
     ParamData = defaultParamData
     @logger.catch
     def handleParam(self, index: int) -> None:
-        pType = paramType[self.argv[index]]
-        pName = paramName[self.argv[index]]
+        # Do SameMeaning first
+        opt   = self.argv[index]
+        pType = paramType[opt]
+        pName = paramName[opt]
         if pType == 'function':
             functionMap[pName]()
         elif pType == 'data':
@@ -46,6 +48,8 @@ class commandConfigs:
             if jumpInLoop:
                 jumpInLoop = False
                 continue
+            if argv[i] in sameMeaning:
+                argv[i] = sameMeaning[argv[i]]
             if argv[i] in paramType:
                 self.handleParam(i)
                 if paramType[argv[i]] == 'data':
