@@ -11,12 +11,15 @@ Download the node.js runtime binary and decompress it to lib\win32
 
 ### Usage:
 ``` shell
-Usage: fuckCpp.exe file [options]...
+Usage: fuckCpp file [options]...
 Options:
-    -h              Display This Help Info
+    -h --help       Display This Help Info
+    -v --version    Show FuckCpp build version
+
     -l <level>      Set confusion level to <level>, default value is 'low'
     -o <file>       Place the output into <file>, default value is 'confused.cpp'
-    --zip -z        Zip the output source file
+    
+    -z --zip        Zip the output source file
     --no-confuse    Ask FuckCpp not to confuse your source
 ```
 
