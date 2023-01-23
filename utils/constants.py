@@ -1,16 +1,21 @@
-from sys import exit
+from os import path
 
-__version__ = '1.3.0'
+from utils.param_func import *
 
-endl = '\n'
+__version__ = '1.3.4'
+
+cur_dir = path.dirname(path.dirname(path.abspath(__file__)))
 
 helpInfo = '''
 Usage: fuckCpp file [options]...
 Options:
-    -h              Display This Help Info
+    -h --help       Display This Help Info
+    -v --version    Show FuckCpp build version
+
     -l <level>      Set confusion level to <level>, default value is 'low'
     -o <file>       Place the output into <file>, default value is 'confused.cpp'
-    --zip -z        Zip the output source file
+    
+    -z --zip        Zip the output source file
     --no-confuse    Ask FuckCpp not to confuse your source
 '''
 
@@ -29,10 +34,6 @@ confuseKeywords = [
     'else'
 ]
 
-spaceTypes = [
-    ' ', '\t', '\n', '\r', '\v', '\f'
-]
-
 # 'src' will be given when handling argv
 defaultParamData = {
     'level': 'low',
@@ -41,38 +42,33 @@ defaultParamData = {
     'noConfuse': False
 }
 
+sameMeaning = {
+    '--zip': '-z',
+    '--help': '-h',
+    '--version': '-v'
+}
+
 paramType = {
     '-h': 'function',
+    '-v': 'function',
     '-l': 'data',
     '-o': 'data',
-    '--zip': 'boolean',
     '-z': 'boolean',
     '--no-confuse': 'boolean'
 }
 
 paramName = {
     '-h': 'help',
+    '-v': 'version',
     '-l': 'level',
     '-o': 'output',
-    '--zip': 'zipsrc',
     '-z': 'zipsrc',
     '--no-confuse': 'noConfuse'
 }
 
 functionMap = {
-    'help': (lambda: (print(helpInfo), exit(0)))
-}
-
-trigraphs = {
-    '=': '#',
-    '/': '\\',
-    '\'': '^',
-    '(': '[',
-    ')': ']',
-    '<': '{',
-    '>': '}',
-    '!': '|',
-    '-': '~'
+    'help': genShowHelp(helpInfo),
+    'version': genShowVersion(__version__)
 }
 
 NodeRunTime = {
@@ -83,4 +79,8 @@ NodeRunTime = {
 
 DEBUG    = True
 
-LOG_FILE = 'runlog_{time:YYYYMMDD}.log' 
+LOG_FILE = cur_dir + '/runlog_{time:YYYYMMDD}.log' 
+
+consoleLogFormat = '<cyan>{module}</cyan>: <level>{message}</level>'
+
+fileLogFormat    =  "{time:YYYY.MM.DD HH:mm:ss} - {thread.name} | {module}.{function}:{line} - {level}:\n{message}"
