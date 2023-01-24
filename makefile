@@ -1,4 +1,4 @@
-DISTROUTE=dist\fuckCpp
+DISTROUTE=dist/fuckCpp
 
 default:
 	make windows
@@ -14,3 +14,6 @@ linux:
 	pyinstaller entry.spec --noconfirm
 	cp -r js ${DISTROUTE}
 	cp -r lib ${DISTROUTE}
+
+clean:
+	rm -rf ${DISTROUTE}/
