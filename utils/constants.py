@@ -81,6 +81,6 @@ DEBUG    = True
 
 LOG_FILE = cur_dir + '/runlog_{time:YYYYMMDD}.log' 
 
-consoleLogFormat = '<cyan>{module}</cyan>: <level>{message}</level>'
+consoleLogFormat = '<cyan>fuckCpp</cyan>: <level>{message}</level>'
 
 fileLogFormat    =  "{time:YYYY.MM.DD HH:mm:ss} - {thread.name} | {module}.{function}:{line} - {level}:\n{message}"
