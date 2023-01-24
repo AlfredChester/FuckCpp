@@ -5,10 +5,10 @@ default:
 
 windows:
 	pyinstaller .\entry.spec --noconfirm
-	mkdir ${DISTROUTE}\js
-	xcopy js ${DISTROUTE}\js /e /y
-	mkdir ${DISTROUTE}\lib
-	xcopy lib ${DISTROUTE}\lib /e /y
+	mkdir dist\fuckCpp\js
+	xcopy js dist\fuckCpp\js /e /y
+	mkdir dist\fuckCpp\lib
+	xcopy lib dist\fuckCpp\lib /e /y
 
 linux:
 	pyinstaller entry.spec --noconfirm
