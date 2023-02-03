@@ -16,7 +16,6 @@ class commandConfigs:
     ParamData = defaultParamData
     @logger.catch
     def handleParam(self, index: int) -> None:
-        # Do SameMeaning first
         opt   = self.argv[index]
         pType = paramType[opt]
         pName = paramName[opt]
