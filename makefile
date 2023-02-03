@@ -6,4 +6,5 @@ all: ${OBJECTS}
 
 clean:
 	rm ./main
+	rm -rf *.dSYM/
 	rm -rf ${OBJECTS}
