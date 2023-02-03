@@ -1,10 +1,11 @@
 OBJECTS=
 INCLUDES= -I./
+EXECUTIVE=fuckCpp
 
 all: ${OBJECTS}
-	gcc main.c ${INCLUDES} ${OBJECTS} -g -O2 -o ./main.out
+	gcc main.c ${INCLUDES} ${OBJECTS} -g -O2 -o ./${EXECUTIVE}
 
 clean:
-	rm ./main.out
+	rm ./${EXECUTIVE}
 	rm -rf *.dSYM/
 	rm -rf ${OBJECTS}
