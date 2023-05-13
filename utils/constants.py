@@ -79,7 +79,7 @@ NodeRunTime = {
 
 DEBUG    = True
 
-LOG_FILE = cur_dir + '/runlog_{time:YYYYMMDD}.log' 
+LOG_FILE = cur_dir + '/logs/runlog_{time:YYYYMMDD}.log' 
 
 consoleLogFormat = '<cyan>fuckCpp</cyan>: <level>{message}</level>'
 
