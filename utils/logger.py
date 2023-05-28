@@ -16,5 +16,4 @@ class MyLogger:
             format = fileLogFormat, rotation = '50 MB'
         )
 
-
 logger = MyLogger().logger
