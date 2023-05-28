@@ -20,4 +20,4 @@ def execute(conf) -> None:
     outPutFile = open(pData['output'], 'w', encoding='u8')
     outPutFile.write(confusedCode)
     outPutFile.close()
-    return   
+    return
