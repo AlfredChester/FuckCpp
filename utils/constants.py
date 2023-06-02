@@ -19,7 +19,7 @@ Usage: fuckCpp file [options]...
 Options:
     -h --help       Display This Help Info
     -v --version    Show FuckCpp build version
-    --show-log      Show FuckCpp runtime logs
+    --show-log      Show FuckCpp runtime log directory
 
     -l <level>      Set confusion level to <level>, default value is 'low'
     -o <file>       Place the output into <file>, default value is 'confused.cpp'
@@ -80,7 +80,7 @@ paramName = {
 functionMap = {
     'help': genShowHelp(helpInfo),
     'version': genShowVersion(__version__),
-    'showLog': genLogPos(LOG_FILE)
+    'showLog': genLogPos(path.join(cur_dir, 'logs'))
 }
 
 NodeRunTime = {
