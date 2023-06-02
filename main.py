@@ -7,15 +7,15 @@ def execute(conf) -> None:
     # Firstly: Mess Codes
     pData = conf.ParamData
     sourceCode = open(pData['src'], 'r', encoding='u8')
-    sourcelines = sourceCode.readlines()
+    sourceLines = sourceCode.readlines()
     confusedCode = ''
-    for line in sourcelines:
+    for line in sourceLines:
         confusedCode += line
     if not pData['noConfuse']:
         Confuser = confuser(pData['level'])
-        confusedCode = Confuser.genConfused(sourcelines)
+        confusedCode = Confuser.genConfused(sourceLines)
     # Secondly: Zip Codes
-    if pData['zipsrc']:
+    if pData['zipSrc']:
         confusedCode = compress(confusedCode)
     outPutFile = open(pData['output'], 'w', encoding='u8')
     outPutFile.write(confusedCode)
