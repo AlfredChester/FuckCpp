@@ -47,7 +47,7 @@ confuseKeywords = [
 defaultParamData = {
     'level': 'low',
     'output': 'confused.cpp',
-    'zipsrc': False,
+    'zipSrc': False,
     'noConfuse': False
 }
 
@@ -72,7 +72,7 @@ paramName = {
     '-v': 'version',
     '-l': 'level',
     '-o': 'output',
-    '-z': 'zipsrc',
+    '-z': 'zipSrc',
     '--no-confuse': 'noConfuse',
     '--show-log': 'showLog'
 }
