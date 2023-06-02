@@ -2,7 +2,7 @@ from os import path
 
 from utils.param_func import *
 
-__version__ = '1.3.4'
+__version__ = '1.3.5'
 
 cur_dir = path.dirname(path.dirname(path.abspath(__file__)))
 
