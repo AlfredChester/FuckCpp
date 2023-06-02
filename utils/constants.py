@@ -8,7 +8,7 @@ cur_dir = path.dirname(path.dirname(path.abspath(__file__)))
 
 DEBUG   = True
 
-LOG_FILE = cur_dir + '/logs/runlog_{time:YYYYMMDD}.log' 
+LOG_FILE = path.join(cur_dir, 'logs/runtime_{time:YYYYMMDD}.log') 
 
 consoleLogFormat = '<cyan>fuckCpp</cyan>: <level>{message}</level>'
 
