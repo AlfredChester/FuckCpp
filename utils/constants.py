@@ -6,11 +6,20 @@ __version__ = '1.3.4'
 
 cur_dir = path.dirname(path.dirname(path.abspath(__file__)))
 
+DEBUG   = True
+
+LOG_FILE = cur_dir + '/logs/runlog_{time:YYYYMMDD}.log' 
+
+consoleLogFormat = '<cyan>fuckCpp</cyan>: <level>{message}</level>'
+
+fileLogFormat    =  "{time:YYYY.MM.DD HH:mm:ss} - {thread.name} | {module}.{function}:{line} - {level}:\n{message}"
+
 helpInfo = '''
 Usage: fuckCpp file [options]...
 Options:
     -h --help       Display This Help Info
     -v --version    Show FuckCpp build version
+    --show-log      Show FuckCpp runtime logs
 
     -l <level>      Set confusion level to <level>, default value is 'low'
     -o <file>       Place the output into <file>, default value is 'confused.cpp'
@@ -54,7 +63,8 @@ paramType = {
     '-l': 'data',
     '-o': 'data',
     '-z': 'boolean',
-    '--no-confuse': 'boolean'
+    '--no-confuse': 'boolean',
+    '--show-log': 'function'
 }
 
 paramName = {
@@ -63,12 +73,14 @@ paramName = {
     '-l': 'level',
     '-o': 'output',
     '-z': 'zipsrc',
-    '--no-confuse': 'noConfuse'
+    '--no-confuse': 'noConfuse',
+    '--show-log': 'showLog'
 }
 
 functionMap = {
     'help': genShowHelp(helpInfo),
-    'version': genShowVersion(__version__)
+    'version': genShowVersion(__version__),
+    'showLog': genLogPos(LOG_FILE)
 }
 
 NodeRunTime = {
@@ -76,11 +88,3 @@ NodeRunTime = {
     'linux': 'bin/node',
     'darwin': 'bin/node'
 }
-
-DEBUG    = True
-
-LOG_FILE = cur_dir + '/logs/runlog_{time:YYYYMMDD}.log' 
-
-consoleLogFormat = '<cyan>fuckCpp</cyan>: <level>{message}</level>'
-
-fileLogFormat    =  "{time:YYYY.MM.DD HH:mm:ss} - {thread.name} | {module}.{function}:{line} - {level}:\n{message}"
