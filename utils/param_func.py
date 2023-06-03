@@ -1,19 +1,23 @@
 from sys import exit
+from typing import NoReturn
+
+def genPrintFunc(info : str):
+    def func() -> NoReturn:
+        print(info)
+        exit(0)
+    return func
 
 def genShowHelp(helpInfo : str):
-    def ret():
-        print(helpInfo)
-        exit(0)
-    return ret
+    return genPrintFunc(helpInfo)
 
 def genShowVersion(version : str):
-    def ret():
-        print('FuckCpp v' + version)
-        exit(0)
-    return ret
+    return genPrintFunc(
+        f'''FuckCpp v{version}
+Copyright (c) 2019-2023 Dr.Alfred.
+Distributed under the MIT License.'''
+    )
 
 def genLogPos(log_dir : str):
-    def ret():
-        print('FuckCpp runtime log directory:', log_dir)
-        exit(0)
-    return ret
+    return genPrintFunc(
+        f'FuckCpp runtime log directory: {log_dir}'
+    )
