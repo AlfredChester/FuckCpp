@@ -2,9 +2,14 @@ from os import path
 
 from utils.param_func import *
 
-__version__ = '1.3.5'
+# __version__ = '1.3.5'
 
 cur_dir = path.dirname(path.dirname(path.abspath(__file__)))
+
+try:
+    __version__ = open(f'{cur_dir}/lib/info/.version', 'r').readline()
+except Exception:
+    __version__ = 'ERROR'
 
 DEBUG   = True
 
