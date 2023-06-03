@@ -78,9 +78,9 @@ paramName = {
 }
 
 functionMap = {
-    'help': genShowHelp(helpInfo),
-    'version': genShowVersion(__version__),
-    'showLog': genLogPos(path.join(cur_dir, 'logs'))
+    'help':     genShowHelp(helpInfo),
+    'version':  genShowVersion(__version__),
+    'showLog':  genLogPos(path.join(cur_dir, 'logs'))
 }
 
 NodeRunTime = {
