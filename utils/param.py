@@ -25,7 +25,8 @@ class commandConfigs:
             try:
                 data = argv[index + 1]
             except IndexError:
-                logger.error("Error: Given param but no data given")
+                logger.error(f"Error: Given option {opt} but no data given")
+                return
             self.ParamData[pName] = data
         else:
             self.ParamData[pName] = True
