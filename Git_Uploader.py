@@ -116,4 +116,3 @@ if __name__ == '__main__':
     Main.main()
     logger.info("Program exited")
     exit(0)
-    
