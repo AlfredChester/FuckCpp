@@ -4,5 +4,11 @@
         "getchar",
         "putchar",
         "scanf"
-    ]
+    ],
+    "files.associations": {
+        "*.asm": "asm-intel-x86-generic",
+        "*.bcat": "plaintext",
+        "*.js": "javascriptreact",
+        "iostream": "cpp"
+    }
 }
