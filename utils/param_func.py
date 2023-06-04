@@ -1,4 +1,5 @@
 from sys import exit
+from time import localtime
 from typing import NoReturn
 
 def genPrintFunc(info : str):
@@ -13,7 +14,7 @@ def genShowHelp(helpInfo : str):
 def genShowVersion(version : str):
     return genPrintFunc(
         f'''FuckCpp v{version}
-Copyright (c) 2019-2023 Dr.Alfred.
+Copyright (c) 2019-{localtime().tm_year} Dr.Alfred.
 Distributed under the MIT License.'''
     )
 
