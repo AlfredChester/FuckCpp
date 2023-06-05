@@ -1,9 +1,10 @@
 from utils.compress import *
-from utils.confuse import *
-from utils.logger import *
+from utils.confuse  import *
+from utils.logger   import *
+from utils.param    import *
 
 @logger.catch
-def execute(conf) -> None: 
+def execute(conf: commandConfigs) -> None: 
     # Firstly: Mess Codes
     pData = conf.ParamData
     sourceCode = open(pData['src'], 'r', encoding='u8')
